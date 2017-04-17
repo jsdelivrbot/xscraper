@@ -1,7 +1,7 @@
 {% load static %} 
 {% block body_class %} {% endblock %} 
 
-{% block content %} {# beginning for page content #} {# {{ page.body|richtext }} #}
+{% block content %} 
 	<head>
 		<title>Vegas Living</title>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -11,29 +11,55 @@
 	<body>
 		<div class="mdl-grid">
 			<div class="mdl-layout-spacer"></div>
-			<div class="mdl-cell mdl-cell--8-col">
-			{% for article in NewsWebsite}
-				<div class="mdl-card mdl-shadow--2dp">
-				  <div class="mdl-card__title">
-				    <h2 class="mdl-card__title-text">Welcome</h2>
-				  </div>
-				  <div class="mdl-card__supporting-text">
-				    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				    Mauris sagittis pellentesque lacus eleifend lacinia...
-				  </div>
-				  <div class="mdl-card__actions mdl-card--border">
-				    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-				      Get Started
-				    </a>
-				  </div>
-				  <div class="mdl-card__menu">
-				    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-				      <i class="material-icons">share</i>
-				    </button>
-				  </div>
-				</div>
-			{% endfor %}
+			
+			<div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--7-col">
+			  <div class="mdl-card__title">
+			    <h2 class="mdl-card__title-text">House 1</h2>
+			  </div>
+			  <div class="mdl-card__supporting-text">
+			    Hello There
+			  </div>
+			  <div class="mdl-card__actions mdl-card--border">
+			    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+			      View House
+			    </a>
+			  </div>
+			  <div class="mdl-card__menu">
+			    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+			      <i class="material-icons">share</i>
+			    </button>
+			  </div>
 			</div>
+	
+			<div class="mdl-layout-spacer"></div>
+		</div>
+		<div class="mdl-grid">
+			<div class="mdl-layout-spacer"></div>
+			{% for article in articles %}
+			<div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--3-col">
+			  <div class="mdl-card__title">
+			    <h2 class="mdl-card__title-text">{{ article.title}}</h2>
+			  </div> 
+			  <div class="mdl-card__image">
+			  	<img src="../thumbnails/full/{{article.thumbnail}}">
+			  	<img src="{{article.thumbnail}}">
+			  	<img src="open_news/thumbnails/full/{{article.thumbnail}}">
+			  </div>
+			  <div class="mdl-card__supporting-text">
+			    {{ article.description}}
+			  </div>
+			  <div class="mdl-card__actions mdl-card--border">
+			    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+			      View House
+			    </a>
+			  </div>
+			  <div class="mdl-card__menu">
+			    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+			      <i class="material-icons">share</i>
+			    </button>
+			  </div>
+			</div>
+			{% endfor %}
 			<div class="mdl-layout-spacer"></div>
 		</div>
 	</body>

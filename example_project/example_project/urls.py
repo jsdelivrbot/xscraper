@@ -9,5 +9,5 @@ from open_news import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-   	url(r'^$', views.home_page, name="vegasliving")
+   	url(r'^$', views.article_list, name="vegasliving")
 ]
